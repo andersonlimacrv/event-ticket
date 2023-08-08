@@ -1,0 +1,16 @@
+# Ignorar diretórios de dependências e pacotes gerados
+node_modules/
+#yarn.lock
+#package-lock.json
+
+# Arquivos de ambiente
+.env
+
+# Arquivos de build
+#dist/
+#out/
+
+# Logs e arquivos temporários
+*.log
+*.swp
+.DS_Store
