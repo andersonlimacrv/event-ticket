@@ -21,11 +21,11 @@ const eventSchema = new mongoose.Schema({
 		type: Array,
 	},
 	city: String,
+	formattedAddress: String,
 	participants: {
 		type: Array,
 		ref: "User",
 	},
-	//cupons: String,
 });
 
 const EventModel = mongoose.model("Event", eventSchema);

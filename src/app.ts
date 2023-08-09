@@ -1,3 +1,5 @@
+import cors from "cors";
+import path from "node:path";
 import express, { Application } from "express";
 import { connectDatabase } from "./infra/database";
 import { errorMiddleware } from "./middlewares/error.middleware";
@@ -14,14 +16,19 @@ class App {
 		this.interceptionError();
 		connectDatabase();
 	}
-	initializeRoutes() {
+	private initializeRoutes() {
 		this.app.use("/events", this.eventRoutes.router);
 	}
-	interceptionError() {
+	private interceptionError() {
 		this.app.use(errorMiddleware);
 	}
-	middlewaresInitialize() {
+	private middlewaresInitialize() {
 		this.app.use(express.json());
+		this.app.use(cors());
+		this.app.use(
+			"/uploads",
+			express.static(path.join(__dirname, "./tmp/uploads"))
+		);
 		this.app.use(express.urlencoded({ extended: true })); // text=Hello%20World
 	}
 	listen() {
