@@ -1,8 +1,10 @@
 # Ignorar diretórios de dependências e pacotes gerados
-node_modules/
+
 #yarn.lock
 #package-lock.json
-
+/node_modules
+/coverage
+tmp/
 # Arquivos de ambiente
 .env
 
