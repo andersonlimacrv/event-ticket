@@ -76,20 +76,15 @@ yarn add -D ts-jest
 ## Endpoints
 
 - [x] Criar evento
-- [x] Buscar evento por localização
-- [x] Buscar evento por categoria
-- [x] Buscar evento por nome
-- [x] Buscar evento por id
-- [x] Verificar se usuário existe
-- [x] Inserir usuário no evento
+- [ ] Buscar evento por localização
+- [ ] Buscar evento por categoria
+- [ ] Buscar evento por nome
+- [ ] Buscar evento por id
+- [ ] Verificar se usuário existe
+- [ ] Inserir usuário no evento
 
 ## Links
 
 - [RoadMap](https://herocodebr.notion.site/herocodebr/Semana-do-Her-i-RoadMap-Hero-Tickets-08ef3438d7e84ce899a13c348b653194)
 
 - [Figma](https://www.figma.com/file/u8SIJScBeIMTUUa9JywATo/Hero-Week-02?type=design&node-id=0-1&mode=design&t=bBIdarCUpHEIGGyz-0)
-
-```
-
-Certifique-se de substituir os comandos e links de acordo com o seu projeto. Este README já está no formato markdown, pronto para ser incluído na raiz do seu repositório.
-```
