@@ -13,7 +13,7 @@ class EventController {
 			const flyers = files.flyers;
 
 			eventData = {
-				...eventData,
+				...eventData, // spread syntax" ou "rest operator" -> cria um novo objeto;
 				banner: banner.filename,
 				flyers: flyers.map(
 					(flyer: any) => flyer.filename
