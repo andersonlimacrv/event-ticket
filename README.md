@@ -1,4 +1,4 @@
-# Hero Ticket - Backend
+# Projeto Backend - para Organização de eventos feitos em node.JS.
 
 ## Tecnologias
 
