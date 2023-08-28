@@ -54,7 +54,7 @@ class EventUseCase {
 		} catch (error) {
 			throw new HttpException(
 				401,
-				"Error request City name "
+				"Error request City name."
 			);
 		}
 	}
