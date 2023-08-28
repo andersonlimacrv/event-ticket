@@ -4,6 +4,7 @@ import express, { Application } from "express";
 import { connectDatabase } from "./infra/database";
 import { errorMiddleware } from "./middlewares/error.middleware";
 import { EventRoutes } from "./routes/event.routes";
+require("dotenv").config();
 
 class App {
 	public app: Application;

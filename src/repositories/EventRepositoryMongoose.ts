@@ -37,6 +37,17 @@ class EventRepositoryMongoose implements EventRepository {
 		await eventModel.save();
 		return event;
 	}
+	async findByLocationAndDate(location: Location, date: Date) {
+		const findEvent = await EventModel.findOne({
+			location,
+			date,
+		}).exec();
+		console.log(
+			"🚀 ~ file: EventRepositoryMongoose.ts:49 ~ EventRepositoryMongoose ~ findEvent:",
+			findEvent
+		);
+		return findEvent;
+	}
 }
 
 export { EventRepositoryMongoose };
