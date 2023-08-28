@@ -52,10 +52,7 @@ class EventUseCase {
 			}
 			throw new HttpException(404, "City not found.");
 		} catch (error) {
-			throw new HttpException(
-				401,
-				"Error request City name."
-			);
+			throw new HttpException(401, "Error request City name");
 		}
 	}
 }
