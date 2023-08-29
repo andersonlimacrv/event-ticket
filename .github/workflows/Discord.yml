@@ -14,11 +14,10 @@ jobs:
                         - name: Check commit message for '#documentação'
                           id: check_commit
                           run: |
-                                  commit_message=$(git log -1 --pretty=%B)
                                   if [[ $commit_message == *"#documentação"* ]]; then
-                                    echo "::set-output name=contains_documentation::true"
+                                    echo "contains_documentation=true" >> $GITHUB_ENV
                                   else
-                                    echo "::set-output name=contains_documentation::false"
+                                    echo "contains_documentation=false" >> $GITHUB_ENV
                                   fi
 
                         - name: Send message to discord if contains '#documentação'
