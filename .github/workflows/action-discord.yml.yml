@@ -1,0 +1,33 @@
+name: Discord
+
+on: 
+  - push
+
+jobs:
+  discord_test_message:
+    runs-on: ubuntu-latest
+    name: discord commits
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Check commit message for '#documentação'
+        id: check_commit
+        run: |
+          commit_message=$(git log -1 --pretty=%B)
+          if [[ $commit_message == *"#documentação"* ]]; then
+            echo "::set-output name=contains_documentation::true"
+          else
+            echo "::set-output name=contains_documentation::false"
+          fi
+
+      - name: Send message to discord if contains '#documentação'
+        if: steps.check_commit.outputs.contains_documentation == 'true'
+        uses: ./ # Uses an action in the root directory
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          template: 'avatar-with-link'
+          include-extras: true
+          # message: "Successful commit to **{{ github.context.payload.repository.owner.name }}/{{ github.context.payload.repository.name}}**.\nDiff: {{ github.context.payload.compare }}"
+          # embed: '{ "title": "{{ commit.title }}", "description": "{{ commit.description }}", "url": "{{ commit.url }}", "author": { "name": "{{ commit.author.name }} ({{ commit.author.username }})", "icon_url": "https://github.com/{{ commit.author.username }}.png"} }'
+          # last-commit-only: true
