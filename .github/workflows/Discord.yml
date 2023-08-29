@@ -1,5 +1,5 @@
 name: Discord-actios
-
+# Description: Send commit summary to Discord using custom templates
 on:
         - push
 
