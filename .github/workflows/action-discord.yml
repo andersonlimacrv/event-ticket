@@ -28,6 +28,6 @@ jobs:
                                   webhook: "https://discord.com/api/webhooks/1145788482233585724/ASG7bfuNCrEYqUd-6f8mBECuUigDN-IAa7LjnIzB9fCMA5w7M9twwBbYwZZFXSqPLs9-"
                                   template: "avatar-with-link"
                                   include-extras: true
-                                  message: "Successful commit to **{{ github.context.payload.repository.owner.name }}/{{ github.context.payload.repository.name}}**.\nDiff: {{ github.context.payload.compare }}"
+                                  #message: "Successful commit to **{{ github.context.payload.repository.owner.name }}/{{ github.context.payload.repository.name}}**.\nDiff: {{ github.context.payload.compare }}"
                                   embed: '{ "title": "{{ commit.title }}", "description": "{{ commit.description }}", "url": "{{ commit.url }}", "author": { "name": "{{ commit.author.name }} ({{ commit.author.username }})", "icon_url": "https://github.com/{{ commit.author.username }}.png"} }'
                                   # last-commit-only: true
