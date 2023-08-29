@@ -8,7 +8,7 @@ inputs:
                 description: "https://discord.com/api/webhooks/1145788482233585724/ASG7bfuNCrEYqUd-6f8mBECuUigDN-IAa7LjnIzB9fCMA5w7M9twwBbYwZZFXSqPLs9-/github"
                 required: true
         message:
-                description: "Nova Documentação Disponível."
+                description: "Nova Documentação Disponível"
         embed:
                 description: "JSON string that accepts double braces for templates. Defaults to template's embed template"
         include-extras:
