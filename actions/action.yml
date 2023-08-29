@@ -17,7 +17,3 @@ inputs:
                 description: "The name of of a premade template."
         last-commit-only:
                 description: true
-
-runs:
-        using: "node16"
-        main: "discord-commits/index.mjs"
