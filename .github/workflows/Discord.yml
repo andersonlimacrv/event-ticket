@@ -1,32 +1,32 @@
-# name: Discord-actios
+name: Discord-actios
 
-# on:
-#         - push
+on:
+        - push
 
-# jobs:
-#         discord_test_message:
-#                 runs-on: ubuntu-latest
-#                 name: discord commits
-#                 steps:
-#                         - name: Checkout
-#                           uses: actions/checkout@v3
+jobs:
+        discord_test_message:
+                runs-on: ubuntu-latest
+                name: discord commits
+                steps:
+                        - name: Checkout
+                          uses: actions/checkout@v3
 
-#                         - name: Check commit message for '#documentação'
-#                           id: check_commit
-#                           run: |
-#                                   if [[ $commit_message == *"#documentação"* ]]; then
-#                                     echo "contains_documentation=true" >> $GITHUB_ENV
-#                                   else
-#                                     echo "contains_documentation=false" >> $GITHUB_ENV
-#                                   fi
+                        - name: Check commit message for '#documentação'
+                          id: check_commit
+                          run: |
+                                  if [[ $commit_message == *"#documentação"* ]]; then
+                                    echo "contains_documentation=true" >> $GITHUB_ENV
+                                  else
+                                    echo "contains_documentation=false" >> $GITHUB_ENV
+                                  fi
 
-#                         - name: Send message to discord if contains '#documentação'
-#                           if: steps.check_commit.outputs.contains_documentation == 'true'
-#                           uses: ./actions
-#                           with:
-#                                   webhook: "https://discord.com/api/webhooks/1145788482233585724/ASG7bfuNCrEYqUd-6f8mBECuUigDN-IAa7LjnIzB9fCMA5w7M9twwBbYwZZFXSqPLs9-"
-#                                   template: "avatar-with-link"
-#                                   include-extras: true
-#                                   # message: "Successful commit to **{{ github.context.payload.repository.owner.name }}/{{ github.context.payload.repository.name}}**.\nDiff: {{ github.context.payload.compare }}"
-#                                   # embed: '{ "title": "{{ commit.title }}", "description": "{{ commit.description }}", "url": "{{ commit.url }}", "author": { "name": "{{ commit.author.name }} ({{ commit.author.username }})", "icon_url": "https://github.com/{{ commit.author.username }}.png"} }'
-#                                   # last-commit-only: true
+                        - name: Send message to discord if contains '#documentação'
+                          if: steps.check_commit.outputs.contains_documentation == 'true'
+                          uses: ./actions
+                          with:
+                                  webhook: "https://discord.com/api/webhooks/1145788482233585724/ASG7bfuNCrEYqUd-6f8mBECuUigDN-IAa7LjnIzB9fCMA5w7M9twwBbYwZZFXSqPLs9-"
+                                  template: "avatar-with-link"
+                                  include-extras: true
+                                  # message: "Successful commit to **{{ github.context.payload.repository.owner.name }}/{{ github.context.payload.repository.name}}**.\nDiff: {{ github.context.payload.compare }}"
+                                  # embed: '{ "title": "{{ commit.title }}", "description": "{{ commit.description }}", "url": "{{ commit.url }}", "author": { "name": "{{ commit.author.name }} ({{ commit.author.username }})", "icon_url": "https://github.com/{{ commit.author.username }}.png"} }'
+                                  # last-commit-only: true
