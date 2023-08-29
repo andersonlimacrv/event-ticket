@@ -23,7 +23,6 @@ jobs:
 
                         - name: Send message to discord if contains '#documentação'
                           if: steps.check_commit.outputs.contains_documentation == 'true'
-                          uses: ./ # Uses an action in the root directory
                           with:
                                   webhook: "https://discord.com/api/webhooks/1145788482233585724/ASG7bfuNCrEYqUd-6f8mBECuUigDN-IAa7LjnIzB9fCMA5w7M9twwBbYwZZFXSqPLs9-"
                                   template: "avatar-with-link"
